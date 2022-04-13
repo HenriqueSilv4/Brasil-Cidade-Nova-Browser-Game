@@ -1,4 +1,4 @@
-<h1 align="center"> Brasil Cidade Nova Website
+<h1 align="center"> Brasil Cidade Nova Browser Game
 </h1>
 
 ![cidade](https://user-images.githubusercontent.com/99505665/163177646-ad75f41f-34c5-43c0-9ca9-cc2a8e6a6c82.png)
