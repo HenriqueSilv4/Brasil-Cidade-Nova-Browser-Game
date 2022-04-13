@@ -1,0 +1,82 @@
+#registerErrorMessage{
+    font-weight: 200;
+    font-size: 16px;
+    background-color: red;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    color: white;
+    align-self: center;
+}
+
+#form-register {
+    display: grid;
+    background-color: rgba(115, 100, 199, 0.9);
+    border-radius: 1rem;
+    justify-items: center;
+    padding: 1rem 2rem;
+    width: 25rem;
+    height: 35rem;
+    font-family: 'Poppins', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+
+#form-register img{
+    margin-bottom: 1.5rem;
+    border-radius: 5rem;
+}
+
+#form-register .input-group{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    margin-right: 1rem;
+}
+
+#form-register .icons {
+    width: 25px;
+    height: 40px;
+    color: #ffffff;
+}
+
+#form-register h3{
+    text-align: center;
+    font-weight: 200;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+#form-register h3:hover{
+    color: yellow;
+}
+
+#form-register button{
+    width: 50%;
+    height: 50px;
+    border: none;
+    color: white;
+    background: #49AA26;
+    padding: 0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    margin-left: 4rem;
+}
+
+#form-register button:hover{
+    background: #3dd705;
+}
+
+#form-register input{
+    text-align: center;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}

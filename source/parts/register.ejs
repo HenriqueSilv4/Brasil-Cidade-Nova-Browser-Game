@@ -1,0 +1,47 @@
+<main>
+
+    <div id="form-register">
+            
+        <img id=register-avatar src="./images/avatar/avatar1.png" width="150" height="150" alt="Avatar de um personagem">
+
+        <form action="/register" method="post">
+
+            <div class="input-group">
+
+                <div class="icons">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <input type="text" autocomplete="off" id="registerNickname" name="registerNickname" minlength="3" maxlength="24" placeholder="Cadastre seu nick"  required>
+
+            </div>
+
+            <div class="input-group">
+
+                <div class="icons">
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <input type="password" autocomplete="off" id="registerPassword" name="registerPassword" minlength="8" maxlength="8" placeholder="Cadastre sua senha" required>   
+
+            </div>
+
+            <div class="input-group">
+
+                <div class="icons">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <input type="email" autocomplete="off" id="registerEmail" name="registerEmail" maxlength="24" placeholder="Cadastre seu email" required>   
+
+            </div>
+
+            <button type="submit">Registrar</button>
+
+        </form>
+
+        <h2 id="registerErrorMessage"> Esse usuário já existe </h2>
+    
+    </div>
+    
+</main>

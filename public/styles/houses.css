@@ -1,0 +1,95 @@
+/* CASAS ======== CASAS =========== CASAS */
+
+#housesWrapper{
+    font-family: 'Poppins', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: fit-content;
+    background-color: rgba(30, 30, 30, 1.0);
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+#houses{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.houseCard{
+    position: relative;
+    flex: none;
+    scroll-snap-align: start;
+    width: 100%;
+    margin: 5px;
+}
+
+.houseCard img{
+    width: 95%;
+    height: 410.39px;
+    display: block;
+    margin: 0.5rem auto 0.5rem auto; 
+    border-radius: 0.5rem;
+    object-fit: fill;
+    box-shadow: 0.4rem 0.3rem rgb(0 0 0);
+}
+
+.houseInfo{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2;
+    width: 100%;
+    color: black;
+    text-align: center;
+    border-radius: 0.2rem;
+}
+
+.houseInfo td{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.houseInfo .fa-solid.fa-location-dot{
+    color: red;
+}
+
+.houseInfo .fa-solid.fa-hand-holding-dollar{
+    color: green;
+}
+
+.houseCard button{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.2rem;
+    width: 200px;
+    font-weight: 800;
+    color: white;
+    background-color: green;
+    border: none;
+    border-bottom: 2px orange solid;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    transition: all 200ms;
+}
+
+.houseCard button:hover{
+    border-bottom: 4px orange solid;
+    cursor: pointer;
+}
+
+.houseCard button:active{
+    border: none;
+}
+
+.houseCard button.disabled{
+    background-color: red;
+}
+.houseCard button.disabled:hover{
+    color: white;
+    cursor: not-allowed;
+}

@@ -1,0 +1,64 @@
+/* DASHBOARD ======== DASHBOARD =========== DASHBOARD */
+
+nav #hudplayer{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(115, 100, 199, 0.8);
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+nav #hudplayer .cards{
+    color: white;
+}
+
+nav #hudplayer #button-logout:hover{
+    border-bottom: 0.1rem solid rgba(0, 255, 0, 1.0);
+    color: yellow;
+    cursor: pointer;
+}
+
+nav #hudplayer img{
+    border-radius: 5rem;
+    box-shadow: -0.2rem -0.2rem rgba(0, 0, 0, 0.4);
+}
+
+nav #hudplayer a{
+    
+    color: white;
+    text-decoration: none;
+}
+
+nav #hudplayer a:hover{
+    color: yellow;
+}
+
+nav #menuplayer{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(115, 100, 199, 0.5);
+    align-items: baseline;
+    padding: 0.5rem;
+}
+
+nav #menuplayer h3{
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav #menuplayer a{
+    color: white;
+    text-decoration: none;
+}
+
+nav #menuplayer .cards a{
+    color: white;
+}
+
+nav #menuplayer .cards a:hover{
+    border-bottom: 0.1rem solid rgba(0, 255, 0, 1.0);
+    color: yellow;
+    cursor: pointer;
+}

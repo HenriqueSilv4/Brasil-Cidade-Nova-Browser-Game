@@ -1,0 +1,94 @@
+/* EMPRESAS ======== EMPRESAS =========== EMPRESAS */
+
+#propertiesWrapper{
+    font-family: 'Poppins', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: fit-content;
+    background-color: rgba(30, 30, 30, 1.0);
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+#properties{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.propertieCard{
+    position: relative;
+    flex: none;
+    scroll-snap-align: start;
+    width: 100%;
+    margin: 5px;
+}
+
+.propertieCard img{
+    width: 95%;
+    display: block;
+    margin: 0.5rem auto 0.5rem auto; 
+    border-radius: 0.5rem;
+    object-fit: contain;
+    box-shadow: 0.4rem 0.3rem rgb(0 0 0);
+}
+
+.propertieInfo{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2;
+    width: 100%;
+    color: black;
+    text-align: center;
+    border-radius: 0.2rem;
+}
+
+.propertieInfo td{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.propertieInfo .fa-solid.fa-location-dot{
+    color: red;
+}
+
+.propertieInfo .fa-solid.fa-hand-holding-dollar{
+    color: green;
+}
+
+.propertieCard button{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.2rem;
+    width: 200px;
+    font-weight: 800;
+    color: white;
+    background-color: green;
+    border: none;
+    border-bottom: 2px orange solid;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    transition: all 200ms;
+}
+
+.propertieCard button:hover{
+    border-bottom: 4px orange solid;
+    cursor: pointer;
+}
+
+.propertieCard button:active{
+    border: none;
+}
+
+.propertieCard button.disabled{
+    background-color: red;
+}
+.propertieCard button.disabled:hover{
+    color: white;
+    cursor: not-allowed;
+}

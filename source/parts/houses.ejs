@@ -1,0 +1,46 @@
+<div id="housesWrapper">
+
+    <div id="houses">
+
+        <% house.forEach(function(element, index, arr) { %>
+
+            <div class="houseCard">
+
+                <img src="../images/houses/<%= element.id_house %>.jpg">
+
+                <table class="houseInfo">
+
+                    <tr>
+                        <th> <i class="fa-solid fa-building"></i>Imóvel</th>
+                        <th> <i class="fa-solid fa-location-dot"></i>Localização</th>
+                        <th> <i class="fa-solid fa-hand-holding-dollar"></i> Valor</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <%= element.name %>
+                        </td>
+                        <td>
+                            <%= element.location %>
+                        </td>
+                        <td>
+                            <%= element.value %>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <form action="/houses" method="post">
+                    
+                    <input type="hidden" name="houseValue"  value=<%=element.value %> >
+                    <button name="houseName" type="submit"    value="<%=element.name %>" >ALUGAR</button>
+
+                </form>
+
+            </div>
+
+        <% }); %>
+
+    </div>
+
+</div>

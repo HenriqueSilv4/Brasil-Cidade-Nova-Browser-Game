@@ -1,0 +1,83 @@
+#form-login {
+    display: grid;
+    background-color: rgba(115, 100, 199, 0.9);
+    border-radius: 1rem;
+    justify-items: center;
+    padding: 1rem 2rem;
+    width: 25rem;
+    height: 30rem;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#form-login img{
+    border-radius: 5rem;
+}
+
+#form-login .input-group{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    margin-right: 1rem;
+}
+
+#form-login .icons {
+    width: 25px;
+    height: 40px;
+    color: #ffffff;
+}
+
+#form-login a{
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    height: 30px;
+}
+
+#form-login a:hover{
+    color: yellow;
+}
+
+#form-login button{
+    display: block;
+    width: 80%;
+    height: 50px;
+    border: none;
+    color: white;
+    background: #49AA26;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#form-login button:hover{
+    background: #3dd705;
+}
+
+#form-login input{
+    text-align: center;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+#loginErrorMessage{
+    font-weight: 200;
+    font-size: 16px;
+    background-color: red;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    color: white;
+    align-self: center;
+}

@@ -1,0 +1,27 @@
+/* FOOTER ======== FOOTER =========== FOOTER */
+
+footer{
+    background-color: rgba(0, 150, 255, 0.7);
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem;
+    width: 30%;
+    border-radius: 2rem;
+    margin: 1rem auto 0.2rem auto;
+    flex-wrap: wrap;
+}
+
+footer h3{
+    font-size: 16px;
+    text-align: center;
+    font-weight: 400;
+}
+
+#social-media i{
+    display: inline;
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+    font-size: 18px;
+}

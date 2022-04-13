@@ -1,0 +1,34 @@
+/* HEADER ======== HEADER =========== HEADER */
+
+header{
+    background-color: rgba(0, 255, 0, 0.3);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+header h1{
+    font-family: "Pricedown";
+    font-size: 42px;
+    font-weight: 500;
+    opacity: 1;
+    margin-right: 50rem;
+}
+
+header a{
+    font-weight: 300;
+    color: white;
+}
+
+header a:hover{
+    color: yellow;
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+}

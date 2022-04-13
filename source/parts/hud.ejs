@@ -1,0 +1,75 @@
+<nav>
+    
+    <section id="hudplayer">
+
+        <div class="cards">
+
+            <img src="../images/avatar/avatar5.png" alt="Avatar do meu Personagem" height="60" width="60">
+
+        </div>
+
+        <div class="cards">
+
+            <h3>
+                <span id="playerNickname"></span>
+            </h3>
+
+            <small>
+                <span id="lastLogin" title="Seu último login"></span>
+            </small>
+
+        </div>
+
+        <div class="cards">
+
+            <h3>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <span id="money" title="Seu dinheiro"></span>
+            </h3>
+
+        </div>
+
+        <div class="cards">
+                <h3>
+                    <i class="fa-solid fa-trophy"></i>
+                </h3>
+            <small>
+                <span id="experience" title="Sua experiência"></span>
+            </small>
+        </div>
+
+        <div class="cards">
+            <h3>
+                <i class="fa-solid fa-house"></i>
+            </h3>
+            <span id="house" title="Sua casa"></span>
+        </div>
+
+        <div class="cards">
+            <h3>
+                <i class="fa-solid fa-building"></i>
+            </h3>
+            <span id="propertie" title="Sua empresa"></span>
+        </div>
+
+        <div class="cards" id="button-logout">
+            <h3>
+                <i class="fa-solid fa-power-off"></i>
+                <a href="/">Sair</a>
+            </h3>
+        </div>
+
+    </section>
+
+    <script>
+
+        document.getElementById('playerNickname').textContent  = " Olá, <%= playerName %>"
+        document.getElementById('lastLogin').textContent  = "Último login: <%= lastLoginDate %> ás <%= lastLoginHour %>"
+        document.getElementById('money').textContent  = "<%= playerMoney %>"
+        document.getElementById('experience').textContent  = "<%= playerExperience %> exp"
+        document.getElementById('house').textContent  = "<%= playerHouse %>"
+        document.getElementById('propertie').textContent  = "<%= playerPropertie %>"
+
+    </script>
+
+</nav>
