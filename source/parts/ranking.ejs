@@ -1,0 +1,40 @@
+<div id="rankingWrapper">
+
+    <div class="rankingInfo">
+        <img src="../images/characters/assistant.jpg" alt="">
+        <div>
+            <p>Banco Fleeca:</p>
+            <blockquote>"O banco Fleeca cuida do seu dinheiro da melhor forma. Aqui você pode fazer investimentos,
+                transações e venda do seus imóveis."</blockquote>
+        </div>
+    </div>
+
+    <table class="rankingTable">
+
+        <caption>Top 50</caption>
+
+        <tr>
+            <th> <i class="fa-solid fa-list"></i>Nome</th>
+            <th> <i class="fa-solid fa-clock"></i>Experiência</th>
+            <th> <i class="fa-solid fa-money-bill-transfer"></i>Dinheiro</th>
+            <th> </th>
+        </tr>
+
+        <% ranking.forEach(function(element, index, arr) { %>
+            <tr>
+                <td>
+                    <%= element.nickname %>
+                </td>
+                <td>
+                    <%= element.experience %>
+                </td>
+                <td>
+                    <%= element.money %> $
+                </td>
+            </tr>
+        <% }); %>
+
+    </table>
+
+
+</div>

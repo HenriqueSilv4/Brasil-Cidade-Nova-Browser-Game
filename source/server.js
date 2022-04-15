@@ -4,7 +4,7 @@ var session = require('express-session')
 
 const basePath = __dirname + "/views"
 
-const sqlite3 = require('sqlite3')
+const sqlite3 = require('sqlite3').verbose()
 const sqlite =  require('sqlite')
 const { json } = require("express/lib/response")
 const { NEWDATE } = require("mysql/lib/protocol/constants/types")
@@ -57,9 +57,43 @@ function loadHouses() {
     });
 }
 
+function loadTransactions(player) {
+    return new Promise((resolve, reject) => {
+
+        db.all('SELECT * FROM bank WHERE usuario = ? ORDER BY id_transacao DESC LIMIT 15', [player], (err, row) => {
+            if (err) {
+
+                return reject(err);
+
+            } else {
+
+                resolve(row)
+            }
+        });
+
+    });
+}
+
+function loadRanking() {
+    return new Promise((resolve, reject) => {
+
+        db.all('SELECT nickname, experience, money FROM players ORDER BY experience DESC LIMIT 50', (err, row) => {
+            if (err) {
+
+                return reject(err);
+
+            } else {
+
+                resolve(row)
+            }
+        });
+
+    });
+}
+
 server.get('/', (req, res) => {
 
-    req.session.login = false;
+    req.session.login = true;
     playerName = 'Henrique'
     lastLoginDate = '14/09/1995'
     lastLoginHour = '18:00'
@@ -80,13 +114,10 @@ server.get('/', (req, res) => {
 
 server.post('/', async (req, res) => {
 
-    let nickname = req.body.nickname;
-	let password = req.body.password;
-
-    if(nickname && password)
+    if(req.body.nickname && req.body.password)
     {
         //Adicionar password com case sensitive aqui
-        const result = await db.get('SELECT nickname FROM players WHERE nickname = ? AND password = ?', [nickname, password], (error, row, fields) => {
+        const result = await db.get('SELECT nickname FROM players WHERE nickname = ? AND password = ?', [req.body.nickname, req.body.password], (error, row, fields) => {
 
             if (error) throw error;
 
@@ -156,9 +187,6 @@ server.post('/register', async (req, res) => {
             }
         })
 
-        new dateLogin = new Date()
-        new dateHour = 
-
         db.run('INSERT INTO players (nickname, password, email, money, experience, house, property, admin, avatar, lastLoginDate, lastLoginHour) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [nickname, password, email, 0, 0, 0, 0, 0, 0, dateLogin, 0], (error, row, fields) => {
 
             if(error){
@@ -207,9 +235,22 @@ server.post('/houses', async (req, res) => {
             playerMoney -= req.body.houseValue
             playerHouse = req.body.houseName
 
-            //Salvar em transações do player
+            var today = new Date();
+            var date = today.getDate() + '-' + (today.getMonth()+1) + '-' + today.getFullYear();
+            var hour = today.getHours() + ':' + today.getMinutes();
 
             db.run('UPDATE players SET house = ?, money = ? WHERE nickname = ?', [playerHouse, playerMoney, playerName], (error, row) => {
+
+                if(error){
+
+                    console.log(error)
+                    return false
+
+                }
+        
+            })
+
+            db.run('INSERT INTO bank (usuario, transacao, valor, data) VALUES (?, ?, ?, ?)', [playerName, "Entrada de Imóvel: " + req.body.houseName, req.body.houseValue, date + " as " + hour], (error, row) => {
 
                 if(error){
 
@@ -284,8 +325,52 @@ server.post('/properties', async (req, res) => {
 
 })
 
+server.get('/bank', async (req, res) => {
+
+    if(req.session.login){
+
+        const result = await loadTransactions(playerName);
+
+        res.render(basePath + "/bank", { data: result} )
+
+    }  
+    
+    else{
+        res.render(basePath + '/index')
+    }
+    
+})
+
+server.get('/ranking', async (req, res) => {
+
+    if(req.session.login){
+
+        const result = await loadRanking();
+
+        res.render(basePath + "/ranking", { data: result} )
+
+    }  
+    
+    else{
+        res.render(basePath + '/index')
+    }
+    
+})
+
+server.get('/profile', async (req, res) => {
+
+    if(req.session.login){
+
+        res.render(basePath + "/profile")
+
+    }  
+    
+    else{
+        res.render(basePath + '/index')
+    }
+    
+})
+
 //Checar se o player já tem empresa e retornar mensagem de erro
 
 server.listen(3000)
-
-//TERMINAL NPM RUN DEV

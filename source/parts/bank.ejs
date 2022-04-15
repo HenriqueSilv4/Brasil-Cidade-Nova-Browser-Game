@@ -1,0 +1,52 @@
+<div id="bankWrapper">
+
+    <div class="bankInfo">
+        <img src="../images/characters/assistant.jpg" alt="">
+        <div>
+            <p>Banco Fleeca:</p>
+            <blockquote>"O banco Fleeca cuida do seu dinheiro da melhor forma. Aqui você pode fazer investimentos,
+                transações e venda do seus imóveis."</blockquote>
+        </div>
+    </div>
+
+    <table class="bankTable">
+
+        <caption>Últimas 15 transações</caption>
+
+        <tr class="hoverOff">
+            <th> <i class="fa-solid fa-list"></i>Detalhes</th>
+            <th> <i class="fa-solid fa-clock"></i>Horário</th>
+            <th> <i class="fa-solid fa-money-bill-transfer"></i>Valor</th>
+            <th> </th>
+        </tr>
+
+        <% bank.forEach(function(element, index, arr) { %>
+            <tr>
+                <td>
+                    <%= element.transacao %>
+                </td>
+                <td>
+                    <%= element.data %>
+                </td>
+                <td>
+                    <%= element.valor %> $
+                </td>
+
+                <td>
+
+                    <% if( element.value> 0 ){ %>
+
+                        <img src="../images/assets/income.svg" alt="">
+                        }
+                    <% } else{ %>
+                        <img src="../images/assets/expense.svg" alt="">
+                    <% } %>
+
+                </td>
+            </tr>
+        <% }); %>
+
+    </table>
+
+
+</div>

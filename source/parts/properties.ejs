@@ -1,5 +1,13 @@
 <div id="propertiesWrapper">
 
+    <div class="propertiesInfo">
+        <img src="../images/characters/bryony.jpg" alt="">
+        <div>
+            <p>Assistente Bryony:</p>
+            <blockquote>"Comprar uma empresa é uma das formas disponíveis de ganhar um extra em Los Santos. Você pode contratar funcionários e fazer missões adicionais de entrega de produtos."</blockquote>
+        </div>
+    </div>
+
     <div id="properties">
 
         <% propertie.forEach(function(element, index, arr) { %>
@@ -8,13 +16,14 @@
 
                 <img src="../images/properties/<%= element.id_property %>.jpg">
 
-                <table class="propertieInfo">
+                <table class="propertiesTable">
 
                     <tr>
                         <th> <i class="fa-solid fa-building"></i> Empresa</th>
                         <th> <i class="fa-solid fa-building-user"></i> Proprietário</th>
                         <th> <i class="fa-solid fa-location-dot"></i>Localização</th>
                         <th> <i class="fa-solid fa-hand-holding-dollar"></i> Valor</th>
+                        <th> <i class="fa-solid fa-hand-holding-dollar"></i></th>
                     </tr>
 
                     <tr>
@@ -28,27 +37,28 @@
                             <%= element.location %>
                         </td>
                         <td>
-                            <%= element.value %>
+                            <%= element.value %> $
+                        </td>
+                        <td>
+                            <form action="/properties" method="post">
+                    
+                                <% if( element.owner==='Ninguém' ){ %>
+            
+                                    <input type="hidden" name="propertieValue"  value=<%=element.value %> >
+                                    <input type="hidden" name="propertieName"   value="<%=element.name %>" >
+                                    <button name="propertieID" type="submit"    value=<%=element.id_property %> >COMPRAR</button>
+            
+                                    <% } else{ %>
+            
+                                        <button class="disabled" disabled>INDISPONÍVEL</button>
+            
+                                    <% } %>
+            
+                            </form>
                         </td>
                     </tr>
 
                 </table>
-
-                <form action="/properties" method="post">
-                    
-                    <% if( element.owner==='Ninguém' ){ %>
-
-                        <input type="hidden" name="propertieValue"  value=<%=element.value %> >
-                        <input type="hidden" name="propertieName"   value="<%=element.name %>" >
-                        <button name="propertieID" type="submit"    value=<%=element.id_property %> >COMPRAR</button>
-
-                        <% } else{ %>
-
-                            <button class="disabled" disabled>INDISPONÍVEL</button>
-
-                        <% } %>
-
-                </form>
 
             </div>
 
