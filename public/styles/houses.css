@@ -1,10 +1,33 @@
 /* CASAS ======== CASAS =========== CASAS */
 
+.housesInfo{
+    display: flex;
+    align-items: center;
+    background-color: rgb(39 37 37);
+    border: 0.2rem;
+    border-left: 0.2rem solid rgb(115 100 199);
+    height: 150px;
+}
+
+.housesInfo img{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 0.5rem;
+    width: 120px;
+    height: 110px;
+    box-shadow: 0.2rem 0.1rem rgb(115 100 199);
+}
+
+.housesInfo h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+}
+
 #housesWrapper{
     font-family: 'Poppins', sans-serif;
     margin-left: auto;
     margin-right: auto;
-    width: 800px;
+    width: 900px;
     height: fit-content;
     background-color: rgba(30, 30, 30, 1.0);
     margin-top: 1rem;
@@ -20,7 +43,6 @@
 }
 
 .houseCard{
-    position: relative;
     flex: none;
     scroll-snap-align: start;
     width: 100%;
@@ -34,42 +56,44 @@
     margin: 0.5rem auto 0.5rem auto; 
     border-radius: 0.5rem;
     object-fit: fill;
-    box-shadow: 0.4rem 0.3rem rgb(0 0 0);
+    box-shadow: 0.4rem 0.3rem rgb(115 100 199);
 }
 
-.houseInfo{
+.houseTable{
+    margin-top: 1rem;
     font-family: 'Poppins', sans-serif;
-    background-color: #f2f2f2;
+    background-color: rgb(40 40 40);
     width: 100%;
-    color: black;
+    color: white;
     text-align: center;
     border-radius: 0.2rem;
+    height: 100px;
 }
 
-.houseInfo td{
+.houseTable th{
     font-size: 18px;
     font-weight: 400;
 }
 
-.houseInfo .fa-solid.fa-location-dot{
+.houseTable .fa-solid{
+    margin-right: 0.2rem;
+}
+
+.houseTable .fa-solid.fa-location-dot{
     color: red;
 }
 
-.houseInfo .fa-solid.fa-hand-holding-dollar{
+.houseTable .fa-solid.fa-hand-holding-dollar{
     color: green;
 }
 
 .houseCard button{
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0.2rem;
-    width: 200px;
+    width: 150px;
     font-weight: 800;
     color: white;
-    background-color: green;
+    background: #49AA26;
     border: none;
     border-bottom: 2px orange solid;
     border-radius: 0.2rem;
@@ -78,6 +102,7 @@
 }
 
 .houseCard button:hover{
+    background: #3dd705;
     border-bottom: 4px orange solid;
     cursor: pointer;
 }
